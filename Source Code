@@ -1,4 +1,4 @@
-package wifi;
+package w;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
@@ -9,7 +9,7 @@ import java.awt.event.*;
  *
  * @author shubhambhattar
  */
-public class Wifi extends JFrame 
+public class W extends JFrame 
 {
     public JLabel hotspot=new JLabel("Hotspot Name");
     public JLabel password=new JLabel("Password");
@@ -17,7 +17,7 @@ public class Wifi extends JFrame
     public JPasswordField key=new JPasswordField();
     public JToggleButton create = new JToggleButton("Start");
     public JRadioButton button=new JRadioButton("Show Password", false);
-    public Wifi()
+    public W()
     {
         setLayout(new GridLayout(1, 1, 10, 10));
         JPanel p1=new JPanel();
@@ -61,12 +61,12 @@ public class Wifi extends JFrame
                     System.out.println("Password must contain atleast 8 characters");
                 }
                 try{
-                    PrintWriter target=new PrintWriter("C:\\Users\\shubhambhattar\\Desktop\\Hotspot2.bat");
+                    PrintWriter target=new PrintWriter("C:\\Users\\Public\\Documents\\Hotspot2.bat");
                     target.println("netsh wlan set hostednetwork mode=allow ssid="+s+" key="+a);
                     target.println("netsh wlan start hostednetwork");
                     target.println("pause");
                     target.close();
-                    Runtime.getRuntime().exec(" cmd /c start C:\\Users\\shubhambhattar\\Desktop\\Hotspot2.bat");
+                    Runtime.getRuntime().exec(" cmd /c start C:\\Users\\Public\\Documents\\Hotspot2.bat");
                     create.setText("Stop");
                 }
                 catch(Exception e1)
@@ -78,10 +78,10 @@ public class Wifi extends JFrame
             else
             {
                 try{
-                    PrintWriter target=new PrintWriter("C:\\Users\\shubhambhattar\\Desktop\\Hotspot2.bat");
+                    PrintWriter target=new PrintWriter("C:\\Users\\Public\\Documents\\Hotspot2.bat");
                     target.println("netsh wlan stop hostednetwork");
                     target.close();
-                    Runtime.getRuntime().exec("cmd /c start C:\\Users\\shubhambhattar\\Desktop\\Hotspot2.bat");
+                    Runtime.getRuntime().exec("cmd /c start C:\\Users\\Public\\Documents\\Hotspot2.bat");
                     create.setText("Start");
                 }
                 catch(Exception e1)
@@ -107,7 +107,7 @@ public class Wifi extends JFrame
 
     public static void main(String[] args)
     {
-        Wifi frame=new Wifi();
+        W frame=new W();
         frame.setTitle("WiFi Hotspot");
         frame.setSize(350, 160);
         frame.setLocationRelativeTo(null);
