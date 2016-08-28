@@ -1,4 +1,3 @@
-package w;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
@@ -9,7 +8,7 @@ import java.awt.event.*;
  *
  * @author shubhambhattar
  */
-public class W extends JFrame 
+public class WiFiHotspot extends JFrame 
 {
     public JLabel hotspot=new JLabel("Hotspot Name");
     public JLabel password=new JLabel("Password");
@@ -17,7 +16,7 @@ public class W extends JFrame
     public JPasswordField key=new JPasswordField();
     public JToggleButton create = new JToggleButton("Start");
     public JRadioButton button=new JRadioButton("Show Password", false);
-    public W()
+    public WiFiHotspot()
     {
         setLayout(new GridLayout(1, 1, 10, 10));
         JPanel p1=new JPanel();
@@ -107,7 +106,7 @@ public class W extends JFrame
 
     public static void main(String[] args)
     {
-        W frame=new W();
+        WiFiHotspot frame=new WiFiHotspot();
         frame.setTitle("WiFi Hotspot");
         frame.setSize(350, 160);
         frame.setLocationRelativeTo(null);
