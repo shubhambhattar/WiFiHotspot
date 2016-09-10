@@ -60,12 +60,12 @@ public class WiFiHotspot extends JFrame
                     System.out.println("Password must contain atleast 8 characters");
                 }
                 try{
-                    PrintWriter target=new PrintWriter("C:\\Users\\Public\\Documents\\Hotspot2.bat");
+                    PrintWriter target=new PrintWriter("Hotspot2.bat");
                     target.println("netsh wlan set hostednetwork mode=allow ssid="+s+" key="+a);
                     target.println("netsh wlan start hostednetwork");
                     target.println("pause");
                     target.close();
-                    Runtime.getRuntime().exec(" cmd /c start C:\\Users\\Public\\Documents\\Hotspot2.bat");
+                    Runtime.getRuntime().exec(" cmd /c start Hotspot2.bat");
                     create.setText("Stop");
                 }
                 catch(Exception e1)
@@ -77,10 +77,10 @@ public class WiFiHotspot extends JFrame
             else
             {
                 try{
-                    PrintWriter target=new PrintWriter("C:\\Users\\Public\\Documents\\Hotspot2.bat");
+                    PrintWriter target=new PrintWriter("Hotspot2.bat");
                     target.println("netsh wlan stop hostednetwork");
                     target.close();
-                    Runtime.getRuntime().exec("cmd /c start C:\\Users\\Public\\Documents\\Hotspot2.bat");
+                    Runtime.getRuntime().exec("cmd /c start Hotspot2.bat");
                     create.setText("Start");
                 }
                 catch(Exception e1)
